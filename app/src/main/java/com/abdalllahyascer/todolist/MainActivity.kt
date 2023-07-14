@@ -18,15 +18,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.newTaskButton.setOnClickListener{
-            NewTaskSheet().show(supportFragmentManager,"New Task tag")
+            NewTaskSheet(null).show(supportFragmentManager,"New Task tag")
         }
 
-        viewModel.taskName.observe(this){
-            binding.taskName.text=it
-        }
 
-        viewModel.taskDesc.observe(this){
-            binding.taskDesc.text=it
-        }
     }
 }
