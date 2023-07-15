@@ -1,13 +1,11 @@
 package com.abdalllahyascer.todolist
 
 import android.os.Build
-import androidx.annotation.RequiresApi
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.abdalllahyascer.todolist.model.TaskItem
-import java.time.Clock
 import java.time.LocalDate
-import java.time.LocalDateTime
+import java.time.LocalTime
 import java.util.UUID
 
 class TaskViewModel: ViewModel() {
@@ -24,12 +22,13 @@ class TaskViewModel: ViewModel() {
         list!!.add(task)
         taskItems.value=list
     }
-    fun updateTask(id :UUID,name:String,desc:String,dueTime: LocalDateTime?){
+    fun updateTask(id :UUID,name:String,desc:String,dueTime: LocalTime?){
         val list=taskItems.value
         val task =list!!.find { it.id==id }!!
         task.name=name
         task.desc=desc
-        task.dueDate=dueTime
+        task.dueTime=dueTime
+        task.completedDate=null
         taskItems.value=list
     }
 
