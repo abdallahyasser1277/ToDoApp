@@ -17,14 +17,14 @@
         android:layout_height="wrap_content"
         android:text="New Task"
         android:id="@+id/newTaskButton"
-        android:backgroundTint="?attr/colorPrimary"
-        android:textColor="?attr/colorOnPrimary"
+        android:textColor="@color/white"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_margin="16dp"
-        app:icon="@drawable/baseline_add_circle_24"
-        app:iconTint="?attr/colorOnPrimary"
-        app:iconSize="32dp"
+        app:backgroundTint="@color/colorPrimary"
+        app:icon="@drawable/add_task_24"
+        app:iconTint="@color/white"
+        app:iconSize="28dp"
         />
 
 </RelativeLayout>

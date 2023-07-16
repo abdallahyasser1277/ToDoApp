@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.abdalllahyascer.todolist.R
 import com.abdalllahyascer.todolist.databinding.TodoCardBinding
 import com.abdalllahyascer.todolist.model.TaskItem
+import com.abdalllahyascer.todolist.model.TaskItem.Companion.timeFormat
 import com.abdalllahyascer.todolist.model.TaskItemClickListener
 import java.time.format.DateTimeFormatter
 
@@ -17,7 +18,6 @@ class TodoListHolder(
     private val clickListener: TaskItemClickListener
 ):RecyclerView.ViewHolder(binding.root) {
 
-    private val timeFormat = DateTimeFormatter.ofPattern("HH:mm")
 
     fun bindTaskItem(taskItem: TaskItem){
         binding.nameView.text=taskItem.name
@@ -35,8 +35,8 @@ class TodoListHolder(
             clickListener.editTaskItem(taskItem)
         }
 
-        if (taskItem.dueTime!=null) binding.timeView.text = timeFormat.format(taskItem.dueTime)
-        else binding.timeView.text = ""
+        if (taskItem.dueTime()!=null) binding.timeView.text = timeFormat.format(taskItem.dueTime())
+        else binding.timeView.text = "--:--"
 
 
     }

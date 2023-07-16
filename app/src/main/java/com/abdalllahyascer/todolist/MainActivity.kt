@@ -2,7 +2,7 @@ package com.abdalllahyascer.todolist
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.ViewModelProvider
+import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.abdalllahyascer.todolist.adapters.TodoListAdapter
 import com.abdalllahyascer.todolist.databinding.ActivityMainBinding
@@ -12,17 +12,18 @@ import com.abdalllahyascer.todolist.model.TaskItemClickListener
 class MainActivity : AppCompatActivity() ,TaskItemClickListener{
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var viewModel: TaskViewModel
+    private val viewModel: TaskViewModel by viewModels {
+        TaskViewModelFactory((application as TodoApplication).repo)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding= ActivityMainBinding.inflate(layoutInflater)
-        viewModel=ViewModelProvider(this).get(TaskViewModel::class.java)
         setContentView(binding.root)
 
         binding.newTaskButton.setOnClickListener{
-            NewTaskSheet(null).show(supportFragmentManager,"New Task tag")
+                NewTaskSheet(null).show(supportFragmentManager,"New Task tag")
         }
 
         setTaskListRecyclerView()
@@ -36,7 +37,7 @@ class MainActivity : AppCompatActivity() ,TaskItemClickListener{
     }
 
     override fun editTaskItem(taskItem: TaskItem) {
-        NewTaskSheet(taskItem).show(supportFragmentManager,"New Task tag")
+            NewTaskSheet(taskItem).show(supportFragmentManager, "New Task tag")
     }
 
     override fun completeTaskItem(taskItem: TaskItem) {

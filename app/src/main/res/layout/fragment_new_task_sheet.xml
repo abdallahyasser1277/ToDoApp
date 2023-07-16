@@ -26,6 +26,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/taskName"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:textSize="24dp"
             android:hint="Task Name"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -35,39 +37,75 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp">
+
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/taskDesc"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:lines="3"
+            android:layout_weight="1"
             android:gravity="top"
-            android:id="@+id/taskDesc"
-            android:hint="Task Description"/>
+            android:hint="Task Description"
+            android:minLines="5" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/selectTime"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="SELECT TIME"
-            app:icon="@drawable/access_time_24"
-            app:iconSize="32dp"/>
+            android:gravity="center"
+            android:orientation="horizontal">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/saveButton"
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/selectTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="SELECT TIME"
+                app:icon="@drawable/access_time_24"
+                app:iconSize="32dp" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/completedCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:text="UNCOMPLETED"
+                android:textColor="?attr/colorPrimary"
+                />
+
+
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="SAVE TASK"
-            android:backgroundTint="?attr/colorPrimary"
-            android:textColor="?colorOnPrimary" />
+            android:gravity="center"
+            android:orientation="horizontal">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/saveButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:text="SAVE TASK"
+                android:backgroundTint="?attr/colorPrimary"
+                android:textColor="?colorOnPrimary" />
 
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:id="@+id/deleteBtn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/delete_forever_24"
+                />
 
+        </LinearLayout>
     </LinearLayout>
-
-
 </LinearLayout>
