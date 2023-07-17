@@ -17,6 +17,11 @@
 
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="Theme.screen.splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/black</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/tasks</item>
+        <item name="postSplashScreenTheme">@style/Base.Theme.ToDoList</item>
+    </style>
 
     <style name="Theme.ToDoList" parent="Base.Theme.ToDoList" />
 </resources>
