@@ -14,7 +14,7 @@ The Todo List Android App offers the following key features:
   
   Room Library: The project integrates the Room library, which is part of the Android Jetpack components. Room provides an abstraction layer over SQLite, making it easier to store, retrieve, and manage data within the application. It offers built-in support for database operations and simplifies data persistence.
 
-# SCREENS
+# Screens
 
 ![WhatsApp Image 2024-05-08 at 09 31 55_67784486](https://github.com/abdallahyasser1277/ToDoApp/assets/87530618/ee2be362-95df-4eee-b467-821b513e369c)
 ![WhatsApp Image 2024-05-08 at 09 49 45_62a49af9](https://github.com/abdallahyasser1277/ToDoApp/assets/87530618/00258251-f93f-4cce-8404-5287de2c3fcc)
