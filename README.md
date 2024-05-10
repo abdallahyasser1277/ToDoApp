@@ -1,7 +1,9 @@
 #Overview
+
 The Todo List Android App is a simple and intuitive task management application developed using Kotlin, Jetpack Compose, and the Room library. This GitHub repository provides a comprehensive implementation of a todo list app that allows users to create, organize, and manage their tasks efficiently.
 
 #Features
+
 The Todo List Android App offers the following key features:
 
   Task Creation and Organization: The application enables users to create new tasks with customizable titles, descriptions, due dates, and priority levels. Tasks can be organized into different categories or lists for better task management.
